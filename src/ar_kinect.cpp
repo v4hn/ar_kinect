@@ -125,8 +125,9 @@ namespace ar_pose
     arParamDisp (&cam_param_);
 
     // load in the object data - trained markers and associated bitmap files
-    if ((object = ar_object::read_ObjData (pattern_filename_, data_directory_, &objectnum)) == NULL)
+    if ((object = ar_object::read_ObjData (pattern_filename_, data_directory_, &objectnum)) == NULL){
       ROS_BREAK ();
+    }
     ROS_DEBUG ("Objectfile num = %d", objectnum);
 
     sz_ = cvSize (cam_param_.xsize, cam_param_.ysize);
