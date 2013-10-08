@@ -243,12 +243,12 @@ namespace ar_pose
       tf::Matrix3x3  m = transform.getBasis();
       tf::Vector3    p = transform.getOrigin();
       bool invalid = false;
-      for(int i=0; i < 3; i++)
+      for(int k=0; i < 3; i++)
         for(int j=0; j < 3; j++)
-          invalid = (invalid || isnan(m[i][j]) || fabs(m[i][j]) > 1.0);
+          invalid = (invalid || isnan(m[k][j]) || fabs(m[k][j]) > 1.0);
 
-      for(int i=0; i < 3; i++)
-          invalid = (invalid || isnan(p[i]));
+      for(int k=0; k < 3; i++)
+          invalid = (invalid || isnan(p[k]));
        
 
       if(invalid)
