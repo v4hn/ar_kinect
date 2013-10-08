@@ -165,12 +165,13 @@ namespace ar_pose
       arInit ();
     }
 
-    /* convert cloud to PCL */
-    PointCloud cloud;
-    pcl::fromROSMsg(*msg, cloud);
+    pcl::PCLPointCloud2 pclcloud;
+    pcl_conversions::toPCL(*msg, pclcloud);
+    pcl::PointCloud<pcl::PointXYZRGB> cloud;
+    pcl::fromPCLPointCloud2(pclcloud, cloud);
  
     /* get an OpenCV image from the cloud */
-    pcl::toROSMsg (cloud, *image_msg);
+    pcl::toROSMsg (*msg, *image_msg);
 
     cv_bridge::CvImagePtr cv_ptr;
     try

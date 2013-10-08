@@ -43,11 +43,12 @@
 #include <visualization_msgs/Marker.h>
 
 #include <sensor_msgs/PointCloud2.h>
-#include <pcl/ros/conversions.h>
+#include <pcl/conversions.h>
 #include <pcl/point_types.h>
 #include <pcl/registration/icp.h>
 #include <pcl/registration/registration.h>
 #include <pcl/registration/transformation_estimation_svd.h>
+#include <pcl_conversions/pcl_conversions.h>
 
 #include <opencv/cv.h>
 #include <cv_bridge/cv_bridge.h>
